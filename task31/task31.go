@@ -11,12 +11,12 @@ type Point struct {
 }
 
 // NewPoint - "конструктор" точки
-func NewPoint (x, y float64) Point {
-	return Point{x, y}
+func NewPoint (x, y float64) *Point {
+	return &Point{x, y}
 }
 
 // DistanceTo - метод расчета расстояния до другой точки
-func (a Point) DistanceTo(b Point) float64 {
+func (a *Point) DistanceTo(b *Point) float64 {
 	return math.Sqrt(math.Pow(a.X - b.X, 2) + math.Pow(a.Y - b.Y, 2))
 }
 
